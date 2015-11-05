@@ -32,7 +32,7 @@ public class Game extends Screen {
 		{
 			sr.setColor(Colors.PLAYER);
 			player.render(delta);
-			sr.rect(player.position.getX(), player.position.getY(), player.size, player.size);
+			sr.rect(player.position.getX() - player.size / 2, player.position.getY() - player.size / 2, player.size, player.size);
 		}
 		sr.end();
 	

@@ -6,5 +6,13 @@ public class Player extends Entity {
 		size = 75;
 		velocity.y = -200;
 	}
+	
+	@Override
+	public void render(float delta) {
+		super.render(delta);
+
+		velocity.y -= 50;
+		
+	}
 
 }
