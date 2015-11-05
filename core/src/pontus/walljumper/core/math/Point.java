@@ -7,7 +7,7 @@ package pontus.walljumper.core.math;
  */
 public class Point {
 
-	private float x = 0, y = 0;
+	public float x = 0, y = 0;
 	
 	public Point() {
 

@@ -10,7 +10,8 @@ public class Entity {
 	
 	public Vector2 velocity = new Vector2();
 	
-	public float size = 50;
+	public float width = 50;
+	public float height = 50;
 	
 	public Entity() {
 		
