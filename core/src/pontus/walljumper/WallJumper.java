@@ -1,5 +1,6 @@
 package pontus.walljumper;
 
+import pontus.walljumper.core.Input;
 import pontus.walljumper.core.graphics.ScreenManager;
 import pontus.walljumper.game.Game;
 
@@ -19,6 +20,10 @@ public class WallJumper implements ApplicationListener {
 		
 		ScreenManager.setSelected("GAME");
 		
+		
+		
+		Gdx.input.setInputProcessor(new Input());
+
 	}
 
 	@Override

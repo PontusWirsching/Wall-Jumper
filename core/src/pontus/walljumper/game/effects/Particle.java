@@ -1,5 +1,6 @@
 package pontus.walljumper.game.effects;
 
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 
 import pontus.walljumper.core.math.Point;
@@ -14,6 +15,6 @@ public abstract class Particle {
 		position.set(x, y);
 	}
 	
-	public abstract void render(float delta);
+	public abstract void render(ShapeRenderer sr, float delta);
 
 }
