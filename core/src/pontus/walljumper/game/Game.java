@@ -14,6 +14,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
+import com.badlogic.gdx.math.Rectangle;
 
 
 public class Game extends Screen {
@@ -71,10 +72,14 @@ public class Game extends Screen {
 			sr.setColor(Color.RED);
 			sr.rect(Input.getX() - 5, Input.getY() - 5, 10, 10);
 		
-			Swipe s  = Input.getSwipe();
 			
-			if (s.time != -1) {
-				System.out.println(s.direction.angle());
+			
+			
+			
+			
+			Swipe s  = Input.getSwipe();
+			if (s.time >= 100) {
+				System.out.println(s.direction.angle() + ", " + s.time);
 			}
 			
 			
@@ -87,6 +92,27 @@ public class Game extends Screen {
 		}
 		sr.end();
 	
+		
+		sr.begin(ShapeType.Line);
+		{
+			Rectangle p = new Rectangle(player.position.getX() - player.width / 2, player.position.getY() - player.height / 2, player.width, player.height);
+			for (int i = 0; i < entities.size(); i++) {
+				if (i >= entities.size()) break;
+				Entity e = entities.get(i);
+				if (e == null) continue;
+				
+				Rectangle er = new Rectangle(e.position.getX() - e.width / 2, e.position.getY() - e.height / 2, e.width, e.height);
+				
+				if (p.overlaps(er)) {
+					player.velocity.x = 0;
+				}
+
+				sr.rect(e.position.getX() - e.width / 2, e.position.getY() - e.height / 2, e.width, e.height);
+				
+			}
+		}
+		sr.end();
+		
 	}
 
 }
